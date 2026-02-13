@@ -8,7 +8,23 @@
 
     public static void Main(string[] args)
     {
-        Console.WriteLine("Hello World");
+        AddNumber1Delegate del1 = new AddNumber1Delegate(AddNumber1);
+
+        double result = del1.Invoke(100, 125.45f, 456.789);
+
+        Console.WriteLine(result);
+
+        AddNumber2Delegate del2 = new AddNumber2Delegate(AddNumber2);
+
+        del2.Invoke(50, 255.45f, 123.456);
+
+        CheckLengthDelegate del3 = new CheckLengthDelegate(CheckLength);
+
+        bool status = del3.Invoke("Ikechukwu Daniel");
+
+        Console.WriteLine(status);
+
+
     }
 
 
