@@ -8,11 +8,21 @@
 
     public static void Main(string[] args)
     {
+        /**
+         * Making using of the Func Generic
+         * **/
         AddNumber1Delegate del1 = new AddNumber1Delegate(AddNumber1);
 
         double result = del1.Invoke(100, 125.45f, 456.789);
 
         Console.WriteLine(result);
+
+        //The last type will be the output parameter
+        Func<int, float, double, double> obj1 = new Func<int, float, double, double>(AddNumber1);
+
+        double _funcDel = obj1.Invoke(100, 125.45f, 456.789);
+
+        Console.WriteLine($"Function Delegate: {_funcDel}");
 
         AddNumber2Delegate del2 = new AddNumber2Delegate(AddNumber2);
 
