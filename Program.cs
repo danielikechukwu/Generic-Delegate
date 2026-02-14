@@ -28,6 +28,16 @@
 
         del2.Invoke(50, 255.45f, 123.456);
 
+        /**
+         * Action delegate takes a parameter but does not return any
+         * so instead of creating a delegate like del2 above we just
+         * use the Action delegate.
+         * **/
+
+        Action<int, float, double> obj2 = new Action<int, float, double> (AddNumber2);
+
+        obj2.Invoke(50, 255.45f, 123.456);
+
         CheckLengthDelegate del3 = new CheckLengthDelegate(CheckLength);
 
         bool status = del3.Invoke("Ikechukwu Daniel");
